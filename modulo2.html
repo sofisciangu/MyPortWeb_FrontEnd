@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+<title>Sofía Sciangula</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="https//cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min/css" rel="stylesheet" integrity="sha384-F3w7mX9SPdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel="stylesheet"  href="style.css">
+</head>
+
+<body>
+    <div class="card mat-card" id="first-card"> 
+        <div id="profile-backgruound"><img src="backgr.PNG"image.png></div>
+        <div id="info" style="padding: 16px;">
+            <div id="info-img">
+                <img class="profile-image" src="Fotoperfil.PNG" alt="Foto de perfil" title="Sofía Sciangula"></div>
+                <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-pen"></i></a></div>>
+        </div>
+            <div id="info-data">
+                <div>
+                    <h1>Sofia Sciangula</h1>
+                    <div id="info-work" style="font-weight:bold">Asesoramiento tecnico en Norces</div>
+                    <div id="info-contact"> 
+                        <span><b>Rosario, Argentina</b></span>
+                        <span><a href="#" style="color: blue;">Informacion de contacto</a> </span>
+                    </div>
+                </div>
+            <ul id="info-details" style="line-height: 0.5px; font-size: 10pt;">
+                <li><a href="#">
+                    <img src="Norces.PNG" alt="Norces" width="25" height="25" >
+                        <h6>Norces</h6>
+                </a></li>
+
+                <li><a href="#">
+                    <img src="utn.PNG" alt="UTN" width="25" height="25" >
+                        <h6>Universisdad Tecnologica Nacional</h6>
+                </a></li>
+            </ul>
+            </div>
+
+         <div id="info-actions">
+            <button type="button" class="btn btn-primary">Tengo interes en</button> 
+            <button type="button" class="btn btn-light">Añadir Seccion</button> 
+            <button type="button" class="btn btn-light">Mas</button> 
+         </div>
+    </div>
+    <script>
+        function cambiar_parrafo(){;
+        document.getElementById("edit-acercade").style.display="block";
+        let text = document.getElementById("text-acercade").innerText;
+        console.log(texto);
+    };
+    function myFunction2(valor){
+        document.getElementById("text-acercade").innerText=valor;
+    };
+    let textarea=document.getElementById("edit-acercade")
+    textarea.addEventListener('keyup', (e) =>{
+        logMessage('Key "${e.key}" released [event: keyup ]');
+        if (e.key=="Enter"){
+            document.getElementById("edit-acercade").style.display="none"
+        }
+    });
+    function showFile(input){
+        let file=input.files[0];
+        alert('File name: ${file.name}')
+        alert('Last modified: ${file.lastModified}');
+
+        let reader= new FileReader();
+        reader.readAsText(file);
+        reader.onload=function(){
+            console.log(reader.result);
+            document.getElementById("text-acercade").innerText=reader.result;
+            };
+            reader.onerror=function(){
+                console.log(reader.error);
+            };
+    }
+    </script>
+
+    <div class="card mat-card">
+        <div class="card-titles">
+            <h4>Acerca de</h4>
+            <div class="btn-edit" onclick="cambiar_parrafo()">
+                <a hfer="#" class="btn-right">
+                    <i class="fa fa-pen"></i></a></div>
+        </div>
+          <div>
+            <p id="text-acercade">Técnica química</p>
+        </div>
+        <div>
+            <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display: none">
+        </div>
+    </div>
+    <input type="file" id="file1" onchange="showFile(this)">
+
+    <div class="card mat-card">
+        <div id="experience">
+            <h4>Experiencia</h4>
+            <div class="btn-edit"><a href="#" class="btn right"><i class="fa fa-plus"></i></a></div>
+        </div>
+
+        <div>
+            <ul class="items-list">
+                <li>
+                    <div class="data-conteiner"></div>
+                        <a href="#">
+                    <div class="logo-image-container"></div>
+                    <div class="list-info"></div>
+                        <div>
+                            <h5>Inspector</h5>
+                            <p>
+                            Muni - 
+                            <span>Jornada Parcial</span>
+                        </p>
+                            <h6>Fechas</h6>
+                            <h6>Rosario, Argentina</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="data-control">
+                <!----->
+            </div>
+            </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mat-card">
+        <div class="card-titles">
+            <h4>Aptitudes y validaciones</h4>
+            <button type="button" class="btn btn-light">Añadir una aptitud nueva</button>
+            <button type="button" class="btn btn-light">Hacer un test de aptitudes</button>            
+            <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div>
+        </div>
+    </div>
+
+    <div class="card mat-card">
+        <div class="card-titles">
+            <h4>Logros</h4>
+            <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
